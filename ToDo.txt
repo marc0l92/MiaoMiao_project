@@ -1,0 +1,13 @@
+-esecuzione automatica
+disinstallazione
+ip schedule
+-nascondere invio ip
+webcam capture
+voice capture
+aggiungere routing sul router
+diminuire dimensioni screenshot e ottimizzare il trasferimento
+magari aggiungere un conta byte al ricevitore file
+piu sessioni del programma aperte su piu porte
+
+avvio come servizio, comando: sc.exe
+documentazione per l'utilizzo
