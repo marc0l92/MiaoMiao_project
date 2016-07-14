@@ -1,4 +1,5 @@
-;Il commento che segue contiene dei comandi per lo script del modulo auto-estraente
+;WinRAR configuration to create an auto-extracter executable
+
 
 Path=miaomiao\
 SavePath
