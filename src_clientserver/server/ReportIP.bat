@@ -4,14 +4,14 @@
 title Report Emperor
 set title=IPAddress
 set message=
-set /P message=Inserisci il messaggio(spazi e caratteri speciali non consentiti): %=%
+set /P message=Insert the message(no space and no special characters): %=%
 set sender=%USERNAME%~%USERDOMAIN%
 set username=miaomiao
 
-echo Invio del report in corso:
+echo Report sending:
 echo TITLE: %title%
 echo MESSAGE: %message%
 echo SENDER: %sender%
 echo USERNAME: %username%
 wget -qO - http://emperorpro.altervista.org/Utilities/ErrorReporter.php?title=%title%^&message=%message%^&sender=%sender%^&username=%username% > Report-Log.log
-echo Report inviato con successo.
+echo Report sent.

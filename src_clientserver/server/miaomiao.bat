@@ -1,4 +1,4 @@
-::Interfaccia avanzata per il controllo del programma: main + installa + disinstalla
+::Advanced interface to control the program: main + install + unistall
 
 @echo off
 set BAT_HOME=%~dp0
@@ -43,5 +43,5 @@ echo.
 echo Usa il parametro -i per installare lo script;
 echo usa il parametro -u per disinstallare lo script;
 echo usa il parametro -? o -help per visualizzare questa guida.
-exit 
+exit
 ::---------------------------------------

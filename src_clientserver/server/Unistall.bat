@@ -1,4 +1,4 @@
-::Rimuove tutte le modifiche fatte da questo programma al pc
+::Unistall the program
 
 @echo off
 taskkill.exe /f /im nc.exe

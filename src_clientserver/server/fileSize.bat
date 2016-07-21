@@ -1,3 +1,3 @@
-::Calcola la grandezza del file in ingresso
+::Compute the file size
 
 @echo %~z1

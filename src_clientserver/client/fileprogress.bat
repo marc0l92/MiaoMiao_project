@@ -6,37 +6,37 @@ set /a loadnum=0
 
 echo ##### File progress #####
 echo.
-set /P dimension=Inserisci la dimensione totale del file: 
+set /P dimension=Insert the total size of the file:
 :Loading
-	::stampa interfaccia
+	::print main interface
 	cls
 	echo.
-	echo Trasferimento file in corso...
+	echo Transfering...
 	echo  --------------------------------------------------
 	echo ^|%load%
 	echo  --------------------------------------------------
 	echo %loadnum%/%dimension%
-	::controllo ciclo
+	::loop check
 	if %loadnum% GEQ %dimension% goto Fine
-	::settaggio nuove variabili
+
 	set /a loadnum=%~z1
-	
+
 	set /a repeat=%loadnum% * 50 / %dimension%
-	set /a indice=0
+	set /a index=0
 	set load=
-	:ciclo1
-		if %indice% GEQ %repeat% goto fineCiclo
+	:loop1
+		if %index% GEQ %repeat% goto endLoop
 		set load=%load%%progressChar%
-		set /a indice=%indice% + 1
-	goto ciclo1
-	:fineCiclo
-	
+		set /a index=%index% + 1
+	goto loop1
+	:endLoop
+
 	ping localhost -n 2 >nul
 goto Loading
 
 :Fine
 echo.
-echo Trasferimento completato.
+echo Transfer complete.
 
 ::pause > nul
 ping 1.1.1.1 -n 1 -w 2000 > nul

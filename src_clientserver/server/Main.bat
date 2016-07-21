@@ -1,5 +1,5 @@
-::Versione base per l'attivazione del servizio MiaoMiao: Invio IP e avvio del servizio
+::Basic execution of MiaoMiao server: IP address send and service start
 
 @echo off
-SilentRun.exe "InviaIP.bat"
+SilentRun.exe "SendIP.bat"
 SilentRun.exe "Server.bat"

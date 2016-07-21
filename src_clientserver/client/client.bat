@@ -1,19 +1,19 @@
-:: Programma per la connessione ad un server miaomiao
+:: Program to connect to a miaomiao server
 
 @echo off
 set ip=%1
 
 if DEFINED ip goto start
-set /P ip=Inserisci l'ip a cui vuoi connetterti(porta=55555): 
+set /P ip=Insert the server IP(porta=55555):
 
 :start
 nc -vv %ip% 55555
 
-:: riprovo la connessione
+:: Retry the connection
 echo.
-echo Connessine terminata
-set /P riprova=Vuoi riprovare a connetterti(s/N): 
-if %riprova%==n goto end
+echo Connection closed
+set /P retry=Do you want to restart the connection(y/N):
+if %retry%==n goto end
 goto start
 
 :end
