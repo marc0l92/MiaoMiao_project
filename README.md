@@ -9,16 +9,16 @@ Simple backdoor written in .bat using NetCat.
 This project uses some .bat file to hide to the victim and to the AntiMalware the installation and the execution of this simple socket that listen for incoming connection.
 When a new connection is established (one per time) this server allows to the client to have a shell on the victim computer.
 
-[Project details](./src_clientserver/README.md)
+[Project details](./src_backdoor/README.md)
 
 ## Botnet
 
-Simple script to create a bootnet.
+Simple script to create a botnet.
 This project is divided in two parts:
 * CNC (Command and Control server): server page that allows the attacker to load new commands and the victim to download them.
 * Zombie: script that runs on the victim machine. It download and execute the command retrieved from the CNC server.
 
-[Project details](./src_bootnet/README.md)
+[Project details](./src_botnet/README.md)
 
 ## Other uses
 
