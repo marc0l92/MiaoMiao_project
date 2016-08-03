@@ -15,8 +15,17 @@ set /P receiver=Insert the receiver IP address:
 echo Screenshot creation...
 CmdCapture.exe /f screenshot.png > nul
 echo Creation complete.
+
+:: Compute the file size
 echo Image size (byte):
-call FileSize.bat screenshot.png
+call :getFilesize screenshot.png
+echo %file_size%
+
 echo Screenshot sending..
 call SendClient.bat %receiver% screenshot.png
 del screenshot.png
+exit
+
+:getFilesize
+set file_size=%~z1
+exit /b

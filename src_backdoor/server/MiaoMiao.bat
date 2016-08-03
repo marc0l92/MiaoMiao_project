@@ -30,9 +30,10 @@ exit
 ::---------------------------------------
 :unistall
 
-tools\taskkill.exe /f /im nc.exe
+taskkill.exe /f /im nc.exe
 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /f
-netsh firewall delete allowedprogram NetCat
+netsh advfirewall firewall delete rule name="NetCat"
+::netsh firewall delete allowedprogram NetCat
 del /s /f /q "%ProgramFiles%\miaomiao\*.*"
 rd /s /q "%ProgramFiles%\miaomiao"
 exit
