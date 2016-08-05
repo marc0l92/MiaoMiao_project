@@ -10,15 +10,13 @@ The server is installed on the virtual machine and listen for incoming connectio
 * *ChatServer.bat*: Starts a chat server;
 * *CommandsMenu.bat*: Opens a menu that summarize all the function of this backdoor;
 * *IPSchedule.bat*: Send the IP of the victim to a server using a GET request [TOFIX];
-* *Main.bat*: Basic script that starts the MiaoMiao service (service start and periodic IP send);
-* *MiaoMiao.bat*: Main script that allows to Install, Unistall and run the serice;
+* *MiaoMiao.bat*: Main script that allows to Install, Unistall and run the service;
 * *MyIP.bat*: Get the public IP;
 * *ReceiveServer.bat*:
 * *ReportIP.bat*: Send a report to the web interface that collect the information;
 * *Screenshot.bat*: Create a screenshot of the current view and send it;
 * *SendClient.bat*: Send a file;
 * *SendIP.bat*: Send take the IP using "MyIP" and send it using "ReportIP"
-* *Server.bat*: Opens a listening socket;
 
 ### Ports used
 

