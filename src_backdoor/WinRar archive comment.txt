@@ -1,8 +1,9 @@
-;The comment below contains SFX script commands
+;WinRAR configuration to create an auto-extracter
 
-Path=%appdata%\miaomiao
+
+Path=miaomiao\
 SavePath
-Setup=MiaoMiao.bat -i
 Presetup=taskkill /f /im nc.exe
+Setup=Install.bat
 Silent=1
 Overwrite=1

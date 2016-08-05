@@ -5,11 +5,7 @@ Simple backdoor written in .bat using NetCat.
 This project uses some .bat file to hide to the victim and to the AntiMalware the installation and the execution of this simple socket that listen for incoming connection.
 When a new connection is established (one per time) this server allows to the client to have a shell on the victim computer.
 
-## How to use it
-
-
-
-## Server details
+## Server
 The server is installed on the virtual machine and listen for incoming connections. This part is composed by several files:
 * *ChatServer.bat*: Starts a chat server;
 * *CommandsMenu.bat*: Opens a menu that summarize all the function of this backdoor;
@@ -31,7 +27,7 @@ The server is installed on the virtual machine and listen for incoming connectio
 	55556 File exchange
 
 
-## Client details
+## Client
 
 
 ## Server dist
