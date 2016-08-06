@@ -4,7 +4,7 @@
 set ip=%1
 
 if DEFINED ip goto start
-set /P ip=Insert the server IP(porta=55555):
+set /P ip=Insert the server IP (port=55555):
 
 :start
 nc -vv %ip% 55555
