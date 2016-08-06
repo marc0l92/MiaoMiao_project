@@ -15,19 +15,19 @@ You will also need the server local IP address so before leaving that machine ru
 
 #### What the server installer does
 
-The server installer is an auto-extracter executable created with WinRar. This program extract all the file in the folder ```%APPDATA%/miaomiao``` and executes the script ```MiaoMiao.bat``` using the parameter ```-i```.
+The server installer is an auto-extracter executable created with WinRar. This program extract all the file in the folder ```%APPDATA%/miaomiao``` and at the end executes the command ```MiaoMiao.bat -i```.
 
-The MiaoMiao installer executes these operations:
-* kills all the previous version of MiaoMiao
-* add a new entry to the windows registry in order to launch the service at windows start up
-* add a windows firewall exception
-* starts the service
+The MiaoMiao installer performs these operations:
+* kill all the processes of NetCat;
+* add a new entry to the windows registry in order to launch the service at windows start up;
+* add a Windows Firewall exception for NetCat;
+* start the service.
 
 ### Client (Attacker)
 
 #### Windows client
 
-Dowload the repository on the windows client and launch the script ```/src_backdoor/client/client.bat```. This script will ask you to insert the IP address of the server machine and after that the connection is enstablished.
+Dowload the repository on the Windows client and launch the script ```/src_backdoor/client/client.bat```. This script will ask you to insert the IP address of the server machine and after that the connection is enstablished.
 
 Now you have a remote console on the server machine.
 
@@ -35,13 +35,14 @@ Now you have a remote console on the server machine.
 
 I didn't create an easy to use script for linux yet but to perform the connection you can run this command:
 
-	nc <Server IP Address> 55555 -vv
+	nc <Server-IP-Address> 55555 -vv
 
+After this command you will have a remote console on the server machine.
 
-## Files
+## Files details
 
 ### Server Files
-The server is installed on the virtual machine and listen for incoming connections. This part is composed by several files:
+
 * *ChatServer.bat*: Starts a chat server;
 * *CommandsMenu.bat*: Opens a menu that summarize all the function of this backdoor;
 * *IPSchedule.bat*: Send the IP of the victim to a server using a GET request [TOFIX];
