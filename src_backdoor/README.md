@@ -35,7 +35,7 @@ Now you have a remote console on the server machine.
 
 I didn't create an easy to use script for linux yet but to perform the connection you can run this command:
 
-  nc <Server IP Address> 55555 -vv
+	nc <Server IP Address> 55555 -vv
 
 
 ## Files
@@ -59,7 +59,7 @@ The server is installed on the virtual machine and listen for incoming connectio
 
 ## Ports used
 
-  55555 Remote control
-  55554 Chat service
-  55556 File exchange from Server to Client
-  55557 File exchange from Client to Server
+	55555 Remote control;
+	55554 Chat service;
+	55556 File exchange from Server to Client;
+	55557 File exchange from Client to Server;
